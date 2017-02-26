@@ -2,11 +2,17 @@
 <html>
 <head>
 	<title>Circles</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="paper-full.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.28/howler.js"></script>
 	<link rel="stylesheet" type="text/css" href="circles.css">
-
 	<script type="text/paperscript" canvas="myCanvas">
+
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+		ctx.fillStyle = "#aa0000";
+		ctx.font = "normal lighter 50px cursive";
+		ctx.fillText("Press the Damn key!",500,300);
 		var keyData = {
 			q: {
 				sound: new Howl({
@@ -167,7 +173,7 @@
 		}
 
 		var circles = [];
-
+ 
 		function onKeyDown(event) {
 			if(keyData[event.key]){
 				var maxPoint = new Point(view.size.width, view.size.height);
@@ -191,9 +197,13 @@
         }
       }
     }
+
+
+
 	</script>
-</head>
+  </head>
 <body>
-	<canvas id="myCanvas" resize></canvas>
+
+<canvas id="myCanvas" resize></canvas>
 </body>
 </html>
